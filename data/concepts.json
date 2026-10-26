@@ -1,0 +1,37 @@
+[
+  {
+    "id": "AI-CON-001",
+    "label": "AI model",
+    "status": "E",
+    "definition": "Computational mechanism or representation producing outputs from inputs",
+    "review": "draft"
+  },
+  {
+    "id": "AI-CON-002",
+    "label": "Agent",
+    "status": "S",
+    "definition": "Entity or system perceiving or obtaining information about an environment and selecting or performing actions",
+    "review": "draft"
+  },
+  {
+    "id": "AI-CON-003",
+    "label": "Workflow enactment",
+    "status": "N (WfMC context)",
+    "definition": "Runtime progression and management of workflow instances",
+    "review": "draft"
+  },
+  {
+    "id": "AI-CON-004",
+    "label": "MCP",
+    "status": "N",
+    "definition": "Model Context Protocol for client/server capability interoperability",
+    "review": "draft"
+  },
+  {
+    "id": "AI-CON-005",
+    "label": "LLM",
+    "status": "E",
+    "definition": "Large trained language-centric generative model",
+    "review": "draft"
+  }
+]

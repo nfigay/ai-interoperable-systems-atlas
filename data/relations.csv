@@ -1,0 +1,4 @@
+source_id,relation,target_id,status,notes
+AI-CON-002,may_use,AI-CON-001,P,An agent may use a model but need not
+AI-CON-004,is_distinct_from,AI-CON-003,P,MCP is an integration protocol not workflow enactment
+AI-CON-005,is_a_kind_of,AI-CON-001,P,Classification requires further typing
