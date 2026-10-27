@@ -1,0 +1,79 @@
+#atlas-e31{margin:1.5rem 0 0;font-family:system-ui,sans-serif;min-width:0}
+#atlas-e31 .e31-controls{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;margin:1rem 0}
+#atlas-e31 select,#atlas-e31 button{padding:.4rem .55rem;font:inherit;cursor:pointer}
+#atlas-e31 .e32-workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,var(--e32-inspector-width,420px));gap:1rem;align-items:start;position:relative;min-height:clamp(520px,72vh,920px)}
+#atlas-e31 .e32-workspace.is-inspector-hidden{grid-template-columns:minmax(0,1fr)}
+#atlas-e31 .e32-graph-pane{min-width:0;position:sticky;top:1rem}
+#e31-graph{width:100%;height:clamp(500px,70vh,860px);min-height:420px;border:1px solid #aab7c4;background:#fafcfd}
+#e31-inspector{min-width:0;overflow-wrap:anywhere;background:#f3f6f9;border:1px solid #d7e0e7;padding:1.1rem 1.1rem 1.3rem;font-size:.9rem;line-height:1.55;max-height:clamp(500px,70vh,860px);overflow:auto}
+#e31-inspector h3{margin:.15rem 0 .7rem;font-size:1.2rem}
+#e31-inspector h4{margin:1.2rem 0 .4rem}
+#e31-inspector ul{padding-left:1.3rem}
+#e31-inspector li{margin:.45rem 0}
+#e31-inspector dl{display:grid;grid-template-columns:minmax(110px,1fr) minmax(0,1.5fr);gap:.35rem .7rem;align-items:start}
+#e31-inspector dt{font-weight:650}
+#e31-inspector dd{margin:0;overflow-wrap:anywhere}
+#atlas-e31 .e32-eyebrow{text-transform:uppercase;font-size:.72rem;letter-spacing:.08em;color:#536f80;font-weight:700}
+#atlas-e31 .e32-note{font-size:.8rem;color:#536373;line-height:1.6}
+#atlas-e31 .e33-tabs{display:flex;gap:.45rem;flex-wrap:wrap;margin:.6rem 0 1rem}
+#atlas-e31 .e33-tabs button[aria-pressed="true"]{background:#d4e9ee;border:2px solid #42798b;font-weight:700}
+#e33-concrete{box-sizing:border-box;height:clamp(500px,70vh,860px);min-height:420px;overflow:auto;border:1px solid #aab7c4;background:#fafcfd;padding:1rem;line-height:1.45}
+#e33-concrete pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.78rem}
+#e33-concrete li{margin:.8rem 0}
+#e33-concrete dl{display:grid;grid-template-columns:8rem 1fr;gap:.2rem .6rem}
+#e33-concrete dt{font-weight:600}
+#e33-concrete dd{margin:0;overflow-wrap:anywhere}
+#atlas-e31 [hidden]{display:none!important}
+#atlas-e31 .e31-randomize{display:inline-flex;align-items:center;gap:.3rem;font-size:.88rem}
+#atlas-e31 .e31-randomize input{width:1rem;height:1rem}
+#atlas-e31 .e31-controls button{white-space:nowrap}
+#atlas-e31 .e31-panel-options{display:inline-flex;align-items:center;gap:.7rem;flex-wrap:wrap}
+#atlas-e31 .e32-inspector-handle{position:absolute;top:.7rem;right:0;transform:translateX(45%);z-index:3;padding:.55rem .7rem;border:1px solid #8aa4b6;background:#f3f6f9;border-radius:999px;box-shadow:0 2px 8px rgba(16,43,66,.12)}
+#atlas-e31 .e32-edge-hotzone{position:absolute;top:0;right:0;bottom:0;width:26px;z-index:2;background:linear-gradient(to left,rgba(49,103,137,.08),transparent)}
+#atlas-e31 .e32-workspace:not(.is-inspector-hidden) .e32-edge-hotzone{display:none}
+#atlas-e31 .e32-inspector-tip{display:block;font-size:.78rem;color:#536373;margin-top:.35rem}
+@media(max-width:1280px){#atlas-e31 .e32-workspace{grid-template-columns:minmax(0,1fr) minmax(280px,var(--e32-inspector-width,390px))}}
+@media(max-width:1100px){#atlas-e31 .e32-workspace{grid-template-columns:1fr;min-height:auto}#atlas-e31 .e32-graph-pane{position:static}#e31-graph,#e33-concrete,#e31-inspector{height:440px;max-height:none}#atlas-e31 .e32-inspector-handle,#atlas-e31 .e32-edge-hotzone{display:none!important}}
+
+/* Hidden inspector frees all graph width; hover reveal is an overlay, not a grid column. */
+#atlas-e31 .e32-workspace.is-inspector-hidden{grid-template-columns:minmax(0,1fr)!important}
+#atlas-e31 .e32-workspace.is-inspector-hidden #e31-inspector[hidden]{display:none!important}
+#atlas-e31 .e32-workspace.is-inspector-hidden.is-inspector-peeking #e31-inspector{display:block;position:absolute;right:0;top:0;width:min(var(--e32-inspector-width,420px),92%);max-height:min(80vh,860px);z-index:5;box-shadow:0 6px 28px rgba(16,43,66,.20)}
+#atlas-e31 .e32-inspector-handle{transform:none;right:0;top:.5rem;z-index:7}
+#atlas-e31 .e32-edge-hotzone{width:32px;cursor:pointer}
+@media(max-width:1100px){#atlas-e31 .e32-workspace.is-inspector-hidden.is-inspector-peeking #e31-inspector{position:static;width:100%;box-shadow:none}}
+
+/* Docked resizable inspector. Hidden mode reserves no column. */
+#atlas-e31 .e32-workspace:not(.is-inspector-hidden){grid-template-columns:minmax(0,1fr) 10px minmax(260px,var(--e32-inspector-width,420px));gap:0}
+#atlas-e31 .e32-workspace:not(.is-inspector-hidden) .e32-graph-pane{margin-right:0}
+#atlas-e31 .e32-splitter{cursor:col-resize;touch-action:none;background:#dde7ed;border-inline:1px solid #afc2cd;position:relative;z-index:4}
+#atlas-e31 .e32-splitter:hover,#atlas-e31 .e32-splitter:focus-visible,#atlas-e31 .e32-splitter.is-dragging{background:#78a6bd;outline:2px solid #316789;outline-offset:-2px}
+#atlas-e31 .e32-splitter::after{content:'⋮';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:24px;color:#23485f}
+#atlas-e31 .e32-workspace.is-inspector-hidden .e32-splitter{display:none!important}
+@media(max-width:1100px){#atlas-e31 .e32-workspace:not(.is-inspector-hidden){grid-template-columns:1fr;gap:.5rem}#atlas-e31 .e32-splitter{display:none!important}}
+
+/* ATLAS_SPLITTER_GRIP_ALIGNMENT */
+#atlas-e31 .e32-workspace .e32-splitter {
+  position: relative;
+  align-self: stretch;
+}
+#atlas-e31 .e32-workspace .e32-splitter::after {
+  top: 50%;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+}
+/* Explicit hierarchy projection controls: no Cytoscape membership semantics. */
+#atlas-e31 .e34-hierarchy-tools{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin:1rem 0}
+#atlas-e31 .e34-hierarchy-tools label{display:flex;gap:.4rem;align-items:center}
+#atlas-e31 .e34-hierarchy-tools select{max-width:100%;min-width:8rem}
+#atlas-e31 .e34-kind{display:inline-block;border:1px solid #b7cedb;border-radius:4px;padding:.1rem .35rem;color:#36566c;font-size:.77rem}
+/* Node-wise, evidence-driven folding in Structure; not Cytoscape containment. */
+#atlas-e31 .e34-tree-row{list-style:none;margin-left:calc(var(--e34-indent) * 1.15rem);display:flex;align-items:center;flex-wrap:wrap;gap:.35rem}
+#atlas-e31 .e34-fold{font-weight:700;min-width:2rem;min-height:2rem;padding:.1rem .35rem;border:1px solid #819fb0;border-radius:4px;background:#e1eff5}
+#atlas-e31 .e34-fold-spacer{display:inline-block;min-width:2rem}
+#atlas-e31 .e34-fold-tools{display:flex;align-items:center;flex-wrap:wrap;gap:.6rem;margin:.7rem 0}
+
+/* Shared hierarchy extraction controls across all concrete-model views. */
+#atlas-e31 .e34-shared-tools{display:flex;align-items:center;flex-wrap:wrap;gap:.7rem;margin:.8rem 0;padding:.65rem;border:1px solid #d7e0e7;background:#f3f6f9}
+#atlas-e31 .e34-shared-tools label{display:inline-flex;align-items:center;gap:.35rem}
+#e34-graph{height:clamp(500px,70vh,860px);min-height:420px;border:1px solid #aab7c4;background:#fafcfd}

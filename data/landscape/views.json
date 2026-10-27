@@ -1,0 +1,8 @@
+{
+  "schemaVersion": "atlas-landscape-views/1",
+  "views": [
+    {"id":"view:concept-landscape","title":"Concept cartography","mode":"concepts","selection":{"concepts":"all","relations":"induced"},"projection":"visual-groups","layoutProfile":"concept","lossPolicy":"no-domain-entities-dropped"},
+    {"id":"view:agent-mcp-reference","title":"Agent–MCP–workflow: reference","mode":"composition","selection":{"composition":"comp:reference","connections":"induced","configurations":"applicable"},"projection":"composition-containers","layoutProfile":"composition","lossPolicy":"retain-outgoing-references"},
+    {"id":"view:agent-mcp-alternative","title":"Agent–MCP–workflow: alternative configuration","mode":"composition","selection":{"composition":"comp:alternative","connections":"induced","configurations":"applicable"},"projection":"composition-containers","layoutProfile":"composition","lossPolicy":"retain-outgoing-references"}
+  ]
+}

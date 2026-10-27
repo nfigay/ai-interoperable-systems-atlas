@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "atlas-internal-selection/0.1",
+  "status": "illustrative-unverified",
+  "description": "Explicit illustrative internal selections only. Omission is not a selection.",
+  "selections": [
+    {
+      "id": "internal-selection:reference-client",
+      "baseline": "baseline:reference",
+      "occurrence": "occ:ref-client",
+      "internalDefinition": "internal-definition:ref-client-internal",
+      "context": {"platform": "unspecified"},
+      "revision": null,
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    }
+  ]
+}

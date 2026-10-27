@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "atlas-e3/0.1",
+  "catalog": [
+    {"id":"agent-demo@1.0.0","role":"agent-runtime","provides":["agent-loop"],"requires":["mcp-client"],"sourceIds":[],"evidenceState":"illustrative"},
+    {"id":"client-demo@1.0.0","role":"mcp-client","provides":["mcp-client"],"requires":["mcp-transport-v1"],"sourceIds":[],"evidenceState":"illustrative"},
+    {"id":"server-demo@1.0.0","role":"mcp-server","provides":["mcp-transport-v1","tool-access"],"requires":[],"sourceIds":[],"evidenceState":"illustrative"},
+    {"id":"workflow-demo@1.0.0","role":"workflow-engine","provides":["workflow-enactment"],"requires":[],"sourceIds":[],"evidenceState":"illustrative"},
+    {"id":"client-old@0.8.0","role":"mcp-client","provides":["mcp-client"],"requires":["mcp-transport-v0"],"sourceIds":[],"evidenceState":"illustrative"}
+  ],
+  "specifications": [
+    {"id":"cfg:agent-workflow","revision":"1","intent":"Agent-MCP-workflow architecture","requiredCapabilities":["agent-loop","mcp-client","mcp-transport-v1","workflow-enactment"],"environment":{"platform":"unspecified"},"assertedAt":"2026-10-26","validFrom":null,"validUntil":null,"sourceIds":["src:p2-iu","src:spem-2"]}
+  ],
+  "cases": [
+    {"id":"case:resolved","specId":"cfg:agent-workflow","selectedIds":["agent-demo@1.0.0","client-demo@1.0.0","server-demo@1.0.0","workflow-demo@1.0.0"],"expected":"resolved","note":"Invented candidates for resolver verification; not verified interoperability."},
+    {"id":"case:incompatible","specId":"cfg:agent-workflow","selectedIds":["agent-demo@1.0.0","client-old@0.8.0","server-demo@1.0.0","workflow-demo@1.0.0"],"expected":"incompatible","note":"The old client requires a capability not provided by selected components."},
+    {"id":"case:indeterminate","specId":"cfg:agent-workflow","selectedIds":["agent-demo@1.0.0","client-demo@1.0.0","server-demo@1.0.0","workflow-demo@1.0.0"],"unknownConstraints":["Actual API conformance and semantics not independently tested"],"expected":"indeterminate","note":"Structural satisfaction is insufficient to conclude operational interoperability."}
+  ]
+}

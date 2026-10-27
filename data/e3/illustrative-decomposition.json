@@ -1,0 +1,243 @@
+{
+  "schemaVersion": "atlas-decomposition-example/0.1",
+  "status": "illustrative-author-asserted-not-normative",
+  "disclaimer": "Containment hierarchy and internal component placeholders are explicitly illustrative, not verified normative MCP/agent/workflow structures. Internal placeholders are NOT native occurrences, definitions, or configured selections.",
+  "structures": [
+    {
+      "composition": "comp:reference",
+      "nodes": [
+        {
+          "id": "demo:ref-system",
+          "label": "Reference architecture (example)",
+          "parent": "comp:reference"
+        },
+        {
+          "id": "demo:ref-interaction",
+          "label": "Interaction agent–outils (exemple)",
+          "parent": "demo:ref-system"
+        },
+        {
+          "id": "demo:ref-client-layer",
+          "label": "Client access (example)",
+          "parent": "demo:ref-interaction"
+        },
+        {
+          "id": "demo:ref-client-slot",
+          "label": "Position du client (exemple)",
+          "parent": "demo:ref-client-layer"
+        },
+        {
+          "id": "occ:ref-client",
+          "parent": "demo:ref-client-slot"
+        },
+        {
+          "id": "occ:ref-agent",
+          "parent": "demo:ref-interaction"
+        },
+        {
+          "id": "demo:ref-services",
+          "label": "Services (exemple)",
+          "parent": "demo:ref-system"
+        },
+        {
+          "id": "occ:ref-server",
+          "parent": "demo:ref-services"
+        },
+        {
+          "id": "occ:ref-workflow",
+          "parent": "demo:ref-services"
+        },
+        {
+          "id": "demo:ref-agent-internal",
+          "label": "Composition interne agent (illustration)",
+          "parent": "occ:ref-agent",
+          "illustrativeInternal": true
+        },
+        {
+          "id": "demo:ref-agent-interface",
+          "label": "Agent interface (to be specified)",
+          "parent": "demo:ref-agent-internal",
+          "illustrativeInternal": true
+        },
+        {
+          "id": "demo:ref-agent-unit",
+          "label": "Agent internal unit (to be specified)",
+          "parent": "demo:ref-agent-internal",
+          "illustrativeInternal": true
+        },
+        {
+          "id": "demo:ref-client-internal",
+          "label": "Composition interne client (illustration)",
+          "parent": "occ:ref-client",
+          "illustrativeInternal": true
+        },
+        {
+          "id": "demo:ref-client-interface",
+          "label": "Client interface (to be specified)",
+          "parent": "demo:ref-client-internal",
+          "illustrativeInternal": true
+        },
+        {
+          "id": "demo:ref-client-unit",
+          "label": "Client internal unit (to be specified)",
+          "parent": "demo:ref-client-internal",
+          "illustrativeInternal": true
+        },
+        {
+          "id": "demo:ref-server-internal",
+          "label": "Composition interne server (illustration)",
+          "parent": "occ:ref-server",
+          "illustrativeInternal": true
+        },
+        {
+          "id": "demo:ref-server-interface",
+          "label": "Server interface (to be specified)",
+          "parent": "demo:ref-server-internal",
+          "illustrativeInternal": true
+        },
+        {
+          "id": "demo:ref-server-unit",
+          "label": "Server internal unit (to be specified)",
+          "parent": "demo:ref-server-internal",
+          "illustrativeInternal": true
+        },
+        {
+          "id": "demo:ref-workflow-internal",
+          "label": "Composition interne workflow (illustration)",
+          "parent": "occ:ref-workflow",
+          "illustrativeInternal": true
+        },
+        {
+          "id": "demo:ref-workflow-interface",
+          "label": "Workflow interface (to be specified)",
+          "parent": "demo:ref-workflow-internal",
+          "illustrativeInternal": true
+        },
+        {
+          "id": "demo:ref-workflow-unit",
+          "label": "Workflow internal unit (to be specified)",
+          "parent": "demo:ref-workflow-internal",
+          "illustrativeInternal": true
+        }
+      ]
+    },
+    {
+      "composition": "comp:alternative",
+      "nodes": [
+        {
+          "id": "demo:alt-system",
+          "label": "Architecture alternative (exemple)",
+          "parent": "comp:alternative"
+        },
+        {
+          "id": "demo:alt-interaction",
+          "label": "Interaction agent–outils (exemple)",
+          "parent": "demo:alt-system"
+        },
+        {
+          "id": "demo:alt-client-layer",
+          "label": "Client access (example)",
+          "parent": "demo:alt-interaction"
+        },
+        {
+          "id": "demo:alt-client-slot",
+          "label": "Position du client (exemple)",
+          "parent": "demo:alt-client-layer"
+        },
+        {
+          "id": "occ:alt-client",
+          "parent": "demo:alt-client-slot"
+        },
+        {
+          "id": "occ:alt-agent",
+          "parent": "demo:alt-interaction"
+        },
+        {
+          "id": "demo:alt-services",
+          "label": "Services (exemple)",
+          "parent": "demo:alt-system"
+        },
+        {
+          "id": "occ:alt-server",
+          "parent": "demo:alt-services"
+        },
+        {
+          "id": "occ:alt-workflow",
+          "parent": "demo:alt-services"
+        },
+        {
+          "id": "demo:alt-agent-internal",
+          "label": "Composition interne agent (illustration)",
+          "parent": "occ:alt-agent",
+          "illustrativeInternal": true
+        },
+        {
+          "id": "demo:alt-agent-interface",
+          "label": "Agent interface (to be specified)",
+          "parent": "demo:alt-agent-internal",
+          "illustrativeInternal": true
+        },
+        {
+          "id": "demo:alt-agent-unit",
+          "label": "Agent internal unit (to be specified)",
+          "parent": "demo:alt-agent-internal",
+          "illustrativeInternal": true
+        },
+        {
+          "id": "demo:alt-client-internal",
+          "label": "Composition interne client (illustration)",
+          "parent": "occ:alt-client",
+          "illustrativeInternal": true
+        },
+        {
+          "id": "demo:alt-client-interface",
+          "label": "Client interface (to be specified)",
+          "parent": "demo:alt-client-internal",
+          "illustrativeInternal": true
+        },
+        {
+          "id": "demo:alt-client-unit",
+          "label": "Client internal unit (to be specified)",
+          "parent": "demo:alt-client-internal",
+          "illustrativeInternal": true
+        },
+        {
+          "id": "demo:alt-server-internal",
+          "label": "Composition interne server (illustration)",
+          "parent": "occ:alt-server",
+          "illustrativeInternal": true
+        },
+        {
+          "id": "demo:alt-server-interface",
+          "label": "Server interface (to be specified)",
+          "parent": "demo:alt-server-internal",
+          "illustrativeInternal": true
+        },
+        {
+          "id": "demo:alt-server-unit",
+          "label": "Server internal unit (to be specified)",
+          "parent": "demo:alt-server-internal",
+          "illustrativeInternal": true
+        },
+        {
+          "id": "demo:alt-workflow-internal",
+          "label": "Composition interne workflow (illustration)",
+          "parent": "occ:alt-workflow",
+          "illustrativeInternal": true
+        },
+        {
+          "id": "demo:alt-workflow-interface",
+          "label": "Workflow interface (to be specified)",
+          "parent": "demo:alt-workflow-internal",
+          "illustrativeInternal": true
+        },
+        {
+          "id": "demo:alt-workflow-unit",
+          "label": "Workflow internal unit (to be specified)",
+          "parent": "demo:alt-workflow-internal",
+          "illustrativeInternal": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,20 +1,28 @@
 import cytoscape from 'cytoscape';
 import fcose from 'cytoscape-fcose';
 import expandCollapse from 'cytoscape-expand-collapse';
+import undoRedo from 'cytoscape-undo-redo';
 import concepts from '../../data/concepts.json';
 import relationsCsv from '../../data/relations.csv?raw';
 import { buildAtlasGraph, parseRelationsCsv } from './graph-data.js';
+import {conceptExamples,exampleUrl} from '../e3/concept-bridges.js';
+import {fcoseOptions,fitVisible} from '../layout/fcose-profiles.js';
+import {atlasLandscape} from '../landscape/atlas-landscape.js';
+import {createExplorationController,mountExplorationToolbar,collapseSettings} from '../exploration/controller.js';
 
 cytoscape.use(fcose);
+cytoscape.use(undoRedo);
 cytoscape.use(expandCollapse);
 
 export function mountConceptMap(host) {
-  const graph = buildAtlasGraph(concepts, parseRelationsCsv(relationsCsv));
+  const extracted=atlasLandscape.extract('view:concept-landscape');
+  const graph = buildAtlasGraph(extracted.byKind.concept,extracted.byKind['concept-relation']);
   const conceptById = new Map(concepts.map(c => [c.id, c]));
   host.innerHTML = `<div class="map-intro"><h1>Concept map</h1><p>Compound groups express a <strong>view organisation</strong>, not an ontological assertion. Edge labels express proposed or sourced claims; statuses remain visible.</p></div>
-    <div class="map-controls" aria-label="Graph controls"><button type="button" data-act="layout">Re-layout (fCoSE)</button><button type="button" data-act="collapse">Collapse groups</button><button type="button" data-act="expand">Expand groups</button><button type="button" data-act="fit">Fit</button><button type="button" data-act="reset">Clear focus</button></div>
-    <div class="map-workspace"><div id="atlas-graph" role="group" aria-label="Interactive concept graph; select a node or relation for details"></div><aside id="atlas-detail" aria-live="polite"><h2>Explore a concept</h2><p>Select a node or relation to inspect it.</p></aside></div>
-    <p class="map-footnote">Source data: <code>data/concepts.json</code> and <code>data/relations.csv</code>. Statuses: N normative in stated context; S scientific; E engineering; P proposed. This view has not been formally validated.</p>`;
+    <div class="map-controls" aria-label="Graph controls"><button type="button" data-act="fit">Fit</button><button type="button" data-act="reset">Clear focus</button></div>
+    <div class="map-panel-controls"><button type="button" id="map-detail-toggle" aria-controls="atlas-detail" aria-expanded="true">Hide properties</button><span class="map-panel-help">Drag the divider to adjust width.</span></div>
+    <div class="map-workspace"><div id="atlas-graph" role="group" aria-label="Interactive concept graph; select a node or relation for details"></div><div class="map-splitter" role="separator" tabindex="0" aria-label="Resize map properties" aria-orientation="vertical" aria-valuemin="260" aria-valuemax="900" aria-valuenow="420"></div><aside id="atlas-detail" aria-live="polite"><h2>Explore a concept</h2><p>Select a node or relation to inspect it.</p></aside></div>
+    <p class="map-footnote">Extraction explicite : <code>view:concept-landscape</code> (${extracted.count} ressources). Sources : <code>data/concepts.json</code> et <code>data/relations.csv</code>. Statuses: N normative in stated context; S scientific; E engineering; P proposed. This view has not been formally validated.</p>`;
 
   const cy = cytoscape({
     container: host.querySelector('#atlas-graph'),
@@ -43,6 +51,7 @@ export function mountConceptMap(host) {
         'font-weight': 600, 'text-rotation': 'autorotate', 'text-background-opacity': 1,
         'text-background-color': '#ffffff', 'text-background-padding': '6px', 'color': '#29485c'
       } },
+      { selector: '.atlas-explore-filtered', style: { display: 'none' } },
       { selector: '.map-muted', style: { 'opacity': 0.18 } },
       { selector: '.map-neighbor', style: { 'border-color': '#4192c2', 'border-width': 4 } },
       { selector: ':selected', style: { 'border-color': '#f0a327', 'border-width': 5,
@@ -67,8 +76,41 @@ export function mountConceptMap(host) {
       } }
     ]
   });
-  const ec = cy.expandCollapse({ layoutBy: null, fisheye: false, animate: false, cueEnabled: false });
+  const ur = cy.undoRedo();
+  const ec = cy.expandCollapse({...collapseSettings('concept'), undoable: true});
+  ec.enableCue();
+  const exploration=createExplorationController(cy,ec,'concept',undefined,ur);
+  const disposeToolbar=mountExplorationToolbar(host.querySelector('.map-controls'),exploration,cy);
   const details = host.querySelector('#atlas-detail');
+  const workspace=host.querySelector('.map-workspace');
+  const splitter=host.querySelector('.map-splitter');
+  const detailToggle=host.querySelector('#map-detail-toggle');
+  let inspectorVisible=true;
+  let inspectorWidth=420;
+  let dragging=false;
+  const graphHost=host.querySelector('#atlas-graph');
+  const clampWidth=value=>Math.max(260,Math.min(900,Math.min(workspace.clientWidth*0.75,value)));
+  function refreshGraphSize(){requestAnimationFrame(()=>{if(!cy.destroyed())cy.resize();});}
+  function applyPanel(){
+    workspace.classList.toggle('map-panel-hidden',!inspectorVisible);
+    workspace.style.setProperty('--map-detail-width',inspectorWidth+'px');
+    detailToggle.textContent=inspectorVisible?'Hide properties':'Show properties';
+    detailToggle.setAttribute('aria-expanded',String(inspectorVisible));
+    details.hidden=!inspectorVisible;
+    splitter.hidden=!inspectorVisible;
+    splitter.setAttribute('aria-valuenow',String(inspectorWidth));
+    refreshGraphSize();
+  }
+  detailToggle.addEventListener('click',()=>{inspectorVisible=!inspectorVisible;applyPanel();});
+  splitter.addEventListener('pointerdown',event=>{if(event.button!==0)return;dragging=true;splitter.setPointerCapture(event.pointerId);splitter.classList.add('is-dragging');event.preventDefault();});
+  splitter.addEventListener('pointermove',event=>{if(!dragging)return;inspectorWidth=Math.round(clampWidth(workspace.getBoundingClientRect().right-event.clientX-5));applyPanel();});
+  const stopDrag=()=>{dragging=false;splitter.classList.remove('is-dragging');refreshGraphSize();};
+  splitter.addEventListener('pointerup',stopDrag);
+  splitter.addEventListener('pointercancel',stopDrag);
+  splitter.addEventListener('keydown',event=>{if(event.key!=='ArrowLeft'&&event.key!=='ArrowRight')return;event.preventDefault();inspectorWidth=Math.round(clampWidth(inspectorWidth+(event.key==='ArrowLeft'?24:-24)));applyPanel();});
+  const onWindowResize=()=>{inspectorWidth=Math.round(clampWidth(inspectorWidth));applyPanel();};
+  window.addEventListener('resize',onWindowResize);
+  applyPanel();
   const makeText = (tag, text) => { const el = document.createElement(tag); el.textContent = text; return el; };
   const displayName = id => conceptById.get(id)?.label || id;
 
@@ -118,6 +160,14 @@ export function mountConceptMap(host) {
       details.append(makeText('p', 'Use Expand groups to explore its contained concepts.'));
     } else {
       details.append(makeText('p', data.definition || 'Definition pending review'));
+      const examples=conceptExamples[data.id] || [];
+      if(examples.length){
+        details.append(makeText('h3','Illustrative composite-model occurrences'));
+        details.append(makeText('p','Editorial links to demonstration occurrences, not assertions of semantic identity, interoperability or norm compliance.'));
+        const ul=document.createElement('ul');
+        for(const id of examples){const li=document.createElement('li');const a=makeText('a',id+' — inspect selection, context and baseline');a.href=exampleUrl(id);li.append(a);ul.append(li);}
+        details.append(ul);
+      }
       const connected = graph.edges.map(e => e.data).filter(e => e.source === data.id || e.target === data.id);
       details.append(makeText('h3', `Relations (${connected.length})`));
       if (!connected.length) details.append(makeText('p', 'No relation registered yet.'));
@@ -147,25 +197,21 @@ export function mountConceptMap(host) {
     // The expand-collapse extension maintains the documented
     // .cy-expand-collapse-collapsed-node class itself.  No duplicate state.
   }
-  function fit() { cy.resize(); cy.fit(cy.elements(':visible'), 55); }
-  function layout(randomize = true) {
+  function fit() { fitVisible(cy, 55); }
+  function layout(randomize = exploration.state.randomize) {
     clearEmphasis();
-    cy.layout({ name: 'fcose', quality: 'default', randomize, animate: false,
-      fit: false, nodeDimensionsIncludeLabels: true,
-      idealEdgeLength: 210, nodeRepulsion: 9500, nestingFactor: 1.3, gravity: 0.2
-    }).run();
+    exploration.state.randomize=randomize;exploration.refresh();exploration.layout();
     syncGroupPresentation();
-    fit();
   }
   const controls = event => {
     const action = event.target.closest('button[data-act]')?.dataset.act;
     if (action === 'layout') layout();
-    if (action === 'collapse') { clearEmphasis(); ec.collapseAll(); syncGroupPresentation(); layout(false); cy.elements().unselect(); show(null); }
-    if (action === 'expand') { ec.expandAll(); syncGroupPresentation(); layout(false); cy.elements().unselect(); show(null); }
+    if (action === 'collapse') { clearEmphasis(); exploration.execute('collapse','all','nodes'); syncGroupPresentation(); cy.elements().unselect(); show(null); }
+    if (action === 'expand') { exploration.execute('expand','all','nodes'); syncGroupPresentation(); cy.elements().unselect(); show(null); }
     if (action === 'fit') fit();
     if (action === 'reset') { cy.elements().unselect(); show(null); fit(); }
   };
   host.querySelector('.map-controls').addEventListener('click', controls);
-  requestAnimationFrame(() => { if (cy.destroyed()) return; cy.resize(); layout(); });
-  return () => { host.querySelector('.map-controls')?.removeEventListener('click', controls); cy.destroy(); };
+  requestAnimationFrame(() => { if (cy.destroyed()) return; cy.resize(); cy.one("layoutstop",()=>fit()); layout(true); });
+  return () => { window.removeEventListener('resize',onWindowResize); disposeToolbar();host.querySelector('.map-controls')?.removeEventListener('click', controls); cy.destroy(); };
 }

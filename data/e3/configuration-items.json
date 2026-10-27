@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "atlas-configuration-items/0.1",
+  "status": "illustrative-unverified",
+  "note": "Configuration items are explicit managed identities. No part creates one implicitly. This is an Atlas demonstration, not an ISO 10303 EXPRESS implementation.",
+  "configurationItems": [
+    {"id":"configuration-item:reference-client-internal", "scopeOccurrence":"occ:ref-client", "authority":"atlas-example-local", "evidence":"data/e3/internal-selections.json", "verification":"illustrative-unverified"}
+  ],
+  "realizationDefinitions": [
+    {"id":"realization-definition:reference-client-internal", "configurationItem":"configuration-item:reference-client-internal", "internalDefinition":"internal-definition:ref-client-internal", "assemblyDefinition":"assembly-definition:ref-client-internal", "revision":null, "authority":"atlas-example-local", "evidence":"data/e3/internal-compositions.json", "verification":"illustrative-unverified"}
+  ],
+  "configurationChoices": [
+    {"id":"configuration-choice:reference-client-internal", "baseline":"baseline:reference", "occurrence":"occ:ref-client", "configurationItem":"configuration-item:reference-client-internal", "realizationDefinition":"realization-definition:reference-client-internal", "internalSelection":"internal-selection:reference-client", "authority":"atlas-example-local", "evidence":"data/e3/internal-selections.json", "verification":"illustrative-unverified"}
+  ]
+}

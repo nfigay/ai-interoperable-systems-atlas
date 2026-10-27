@@ -2,6 +2,8 @@
 
 **Editorial warning:** entries are concise orientation definitions pending source-by-source validation. N/S/E/P mark *status of the formulation*, not the entire concept.
 
+**Legend (status of the formulation):** **N** — normative in the explicitly named specification and context; **S** — scientific foundation; **E** — documented engineering convention; **P** — proposed synthesis. Combined statuses (for example S/E) indicate multiple bases; they do not prove universal validity.
+
 | Term | Working meaning | Status |
 |---|---|---|
 | AI | Research and engineering field spanning intelligent behavior, learning, reasoning, perception, planning and action | S |

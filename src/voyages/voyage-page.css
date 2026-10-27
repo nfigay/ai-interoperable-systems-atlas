@@ -1,0 +1,11 @@
+.atlas-voyage-page{max-width:1050px;margin:0 auto;padding:12px 0 36px;line-height:1.55}
+.atlas-voyage-page h1{line-height:1.15}
+.atlas-voyage-kicker{font-size:.8rem;font-weight:700;letter-spacing:.09em;color:#506677}
+.atlas-voyage-warning{border-left:4px solid #b27630;background:#fff5e9;padding:12px}
+.atlas-voyage-index{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;list-style:none;padding:0}
+.atlas-voyage-index button{width:100%;height:100%;text-align:left;padding:12px;border:1px solid #9eb5c4;border-radius:6px;background:#f5f9fb;color:#15374b;cursor:pointer}
+.atlas-voyage-index button[aria-current=step]{background:#d5e9ef;border:2px solid #377c90;font-weight:700}
+.atlas-voyage-page article{padding:14px 0;border-top:1px solid #d3e0e8}
+.atlas-voyage-page code{overflow-wrap:anywhere}
+.atlas-voyage-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.atlas-voyage-buttons button{padding:10px 15px}

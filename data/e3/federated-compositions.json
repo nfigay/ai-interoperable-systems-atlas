@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "atlas-e3.1/0.1",
+  "status": "illustrative-not-operationally-verified",
+  "authorities": [
+    {"id":"atlas-git","kind":"git","scope":"Atlas local repository","resolution":"commit-and-path"},
+    {"id":"demo-registry","kind":"illustrative","scope":"Invented training components","resolution":"explicit-revision"},
+    {"id":"source-doc","kind":"external-document","scope":"CAiSE 2025 and I-ESA 2026 source presentations","resolution":"file-and-section"}
+  ],
+  "definitions": [
+    {"id":"def:agent","kind":"agent-runtime","name":"Agent runtime","authority":"demo-registry","revision":"illustrative-1"},
+    {"id":"def:mcp-client","kind":"mcp-client","name":"MCP client","authority":"demo-registry","revision":"illustrative-1"},
+    {"id":"def:mcp-server","kind":"mcp-server","name":"MCP server","authority":"demo-registry","revision":"illustrative-1"},
+    {"id":"def:workflow","kind":"workflow-engine","name":"Workflow engine","authority":"demo-registry","revision":"illustrative-1"},
+    {"id":"def:method","kind":"method-guidance","name":"Method guidance","authority":"atlas-git","revision":"unresolved-local-commit","path":"docs/E3-governed-configurations.md"}
+  ],
+  "compositions": [
+    {"id":"comp:reference","name":"Agent–MCP–workflow reference architecture","kind":"reference-design","revision":"1"},
+    {"id":"comp:alternative","name":"Alternative composition","kind":"reference-design","revision":"1"}
+  ],
+  "occurrences": [
+    {"id":"occ:ref-agent","definition":"def:agent","composition":"comp:reference","role":"orchestrator","versionSelection":"agent-demo@1.0.0"},
+    {"id":"occ:ref-client","definition":"def:mcp-client","composition":"comp:reference","role":"protocol-client","versionSelection":"client-demo@1.0.0"},
+    {"id":"occ:ref-server","definition":"def:mcp-server","composition":"comp:reference","role":"tool-provider","versionSelection":"server-demo@1.0.0"},
+    {"id":"occ:ref-workflow","definition":"def:workflow","composition":"comp:reference","role":"workflow-enactment","versionSelection":"workflow-demo@1.0.0"},
+    {"id":"occ:alt-agent","definition":"def:agent","composition":"comp:alternative","role":"orchestrator","versionSelection":"agent-demo@1.0.0"},
+    {"id":"occ:alt-client","definition":"def:mcp-client","composition":"comp:alternative","role":"protocol-client","versionSelection":"client-old@0.8.0"},
+    {"id":"occ:alt-server","definition":"def:mcp-server","composition":"comp:alternative","role":"tool-provider","versionSelection":"server-demo@1.0.0"},
+    {"id":"occ:alt-workflow","definition":"def:workflow","composition":"comp:alternative","role":"workflow-enactment","versionSelection":"workflow-demo@1.0.0"}
+  ],
+  "connections": [
+    {"id":"conn:ref-ac","from":"occ:ref-agent","to":"occ:ref-client","kind":"uses","semanticSource":"atlas-example","verification":"illustrative"},
+    {"id":"conn:ref-cs","from":"occ:ref-client","to":"occ:ref-server","kind":"protocol-connection","semanticSource":"atlas-example","verification":"illustrative"},
+    {"id":"conn:ref-sw","from":"occ:ref-server","to":"occ:ref-workflow","kind":"invokes","semanticSource":"atlas-example","verification":"illustrative"},
+    {"id":"conn:alt-ac","from":"occ:alt-agent","to":"occ:alt-client","kind":"uses","semanticSource":"atlas-example","verification":"illustrative"},
+    {"id":"conn:alt-cs","from":"occ:alt-client","to":"occ:alt-server","kind":"protocol-connection","semanticSource":"atlas-example","verification":"illustrative"},
+    {"id":"conn:alt-sw","from":"occ:alt-server","to":"occ:alt-workflow","kind":"invokes","semanticSource":"atlas-example","verification":"illustrative"}
+  ],
+  "federatedReferences": [
+    {"id":"ref:method","authority":"atlas-git","nativeLocator":"docs/E3-governed-configurations.md","granularity":"file","selection":"repository-local-current","pinned":false,"observation":"2026-10-26","semanticScope":"document"},
+    {"id":"ref:caise","authority":"source-doc","nativeLocator":"SemanticCartography.html","granularity":"document-section","selection":"user-supplied-2026-10-26","pinned":false,"observation":"2026-10-26","semanticScope":"scientific-method"},
+    {"id":"ref:iesa","authority":"source-doc","nativeLocator":"IESA2026/Semantic Cartography — I-ESA 2026 [20 min].pdf","granularity":"presentation-slide","selection":"user-supplied-2026-10-26","pinned":false,"observation":"2026-10-26","semanticScope":"scientific-method"}
+  ],
+  "configurations": [
+    {"id":"baseline:reference","composition":"comp:reference","nativeSelections":["agent-demo@1.0.0","client-demo@1.0.0","server-demo@1.0.0","workflow-demo@1.0.0"],"case":"case:resolved","status":"illustrative","federatedReferences":["ref:method","ref:caise","ref:iesa"]},
+    {"id":"baseline:alternative","composition":"comp:alternative","nativeSelections":["agent-demo@1.0.0","client-old@0.8.0","server-demo@1.0.0","workflow-demo@1.0.0"],"case":"case:incompatible","status":"illustrative","federatedReferences":["ref:caise","ref:iesa"]}
+  ],
+  "projectionPolicy": {"containersRepresent":"visual-membership-of-occurrences-in-a-composition","connectionsRepresent":"typed-cross-occurrence-relationships","notEquivalentTo":["semantic-part-of","native-config-membership","OWL-graph","STEP-assembly"]}
+}

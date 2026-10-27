@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "atlas-e3/0.1",
+  "sources": [
+    {"id":"src:spem-2","title":"Software & Systems Process Engineering Metamodel 2.0","publisher":"OMG","kind":"standard","canonicalUrl":"https://www.omg.org/spec/SPEM/2.0/","version":"2.0","publishedAt":"2008-04","observedAt":"2026-10-26","contentRevision":null,"verification":"metadata-reviewed"},
+    {"id":"src:p2-iu","title":"Installable Units","publisher":"Eclipse Equinox","kind":"technical-documentation","canonicalUrl":"https://github.com/eclipse-equinox/p2/blob/master/docs/Installable_Units.md","version":null,"publishedAt":null,"observedAt":"2026-10-26","contentRevision":null,"verification":"content-reviewed","monitoring":"Track Git commit SHA; master is a moving reference"},
+    {"id":"src:prov-o","title":"PROV-O: The PROV Ontology","publisher":"W3C","kind":"standard","canonicalUrl":"https://www.w3.org/TR/prov-o/","version":"W3C Recommendation 2013-04-30","publishedAt":"2013-04-30","observedAt":"2026-10-26","contentRevision":null,"verification":"metadata-reviewed"},
+    {"id":"src:dcat-3","title":"Data Catalog Vocabulary (DCAT) 3","publisher":"W3C","kind":"standard","canonicalUrl":"https://www.w3.org/TR/vocab-dcat-3/","version":"W3C Recommendation 2024-08-22","publishedAt":"2024-08-22","observedAt":"2026-10-26","contentRevision":null,"verification":"metadata-reviewed"},
+    {"id":"src:owl-time","title":"Time Ontology in OWL","publisher":"W3C / OGC","kind":"standard-draft","canonicalUrl":"https://www.w3.org/TR/owl-time/","version":"Candidate Recommendation Draft 2022-11-15","publishedAt":"2022-11-15","observedAt":"2026-10-26","contentRevision":null,"verification":"metadata-reviewed"}
+  ]
+}

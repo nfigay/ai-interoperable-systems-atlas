@@ -1,0 +1,159 @@
+{
+  "schemaVersion": "atlas-internal-composition-register/0.1",
+  "status": "illustrative-unverified",
+  "scope": "read-only authored demo mappings, not authoritative component implementations",
+  "definitions": [
+    {
+      "id": "internal-definition:ref-agent-internal",
+      "composition": "comp:reference",
+      "parentOccurrence": "occ:ref-agent",
+      "rootNode": "demo:ref-agent-internal",
+      "authority": "atlas-example-local",
+      "source": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified",
+      "revision": null,
+      "configurationSelection": null,
+      "interfaces": [
+        "demo:ref-agent-interface"
+      ],
+      "internalOccurrences": [
+        "demo:ref-agent-unit"
+      ],
+      "internalConnections": [],
+      "notes": "Illustrative structure; interface, version, native composition, and internal configuration unspecified."
+    },
+    {
+      "id": "internal-definition:ref-client-internal",
+      "composition": "comp:reference",
+      "parentOccurrence": "occ:ref-client",
+      "rootNode": "demo:ref-client-internal",
+      "authority": "atlas-example-local",
+      "source": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified",
+      "revision": null,
+      "configurationSelection": null,
+      "interfaces": [
+        "demo:ref-client-interface"
+      ],
+      "internalOccurrences": [
+        "demo:ref-client-unit"
+      ],
+      "internalConnections": [],
+      "notes": "Illustrative structure; interface, version, native composition, and internal configuration unspecified."
+    },
+    {
+      "id": "internal-definition:ref-server-internal",
+      "composition": "comp:reference",
+      "parentOccurrence": "occ:ref-server",
+      "rootNode": "demo:ref-server-internal",
+      "authority": "atlas-example-local",
+      "source": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified",
+      "revision": null,
+      "configurationSelection": null,
+      "interfaces": [
+        "demo:ref-server-interface"
+      ],
+      "internalOccurrences": [
+        "demo:ref-server-unit"
+      ],
+      "internalConnections": [],
+      "notes": "Illustrative structure; interface, version, native composition, and internal configuration unspecified."
+    },
+    {
+      "id": "internal-definition:ref-workflow-internal",
+      "composition": "comp:reference",
+      "parentOccurrence": "occ:ref-workflow",
+      "rootNode": "demo:ref-workflow-internal",
+      "authority": "atlas-example-local",
+      "source": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified",
+      "revision": null,
+      "configurationSelection": null,
+      "interfaces": [
+        "demo:ref-workflow-interface"
+      ],
+      "internalOccurrences": [
+        "demo:ref-workflow-unit"
+      ],
+      "internalConnections": [],
+      "notes": "Illustrative structure; interface, version, native composition, and internal configuration unspecified."
+    },
+    {
+      "id": "internal-definition:alt-agent-internal",
+      "composition": "comp:alternative",
+      "parentOccurrence": "occ:alt-agent",
+      "rootNode": "demo:alt-agent-internal",
+      "authority": "atlas-example-local",
+      "source": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified",
+      "revision": null,
+      "configurationSelection": null,
+      "interfaces": [
+        "demo:alt-agent-interface"
+      ],
+      "internalOccurrences": [
+        "demo:alt-agent-unit"
+      ],
+      "internalConnections": [],
+      "notes": "Illustrative structure; interface, version, native composition, and internal configuration unspecified."
+    },
+    {
+      "id": "internal-definition:alt-client-internal",
+      "composition": "comp:alternative",
+      "parentOccurrence": "occ:alt-client",
+      "rootNode": "demo:alt-client-internal",
+      "authority": "atlas-example-local",
+      "source": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified",
+      "revision": null,
+      "configurationSelection": null,
+      "interfaces": [
+        "demo:alt-client-interface"
+      ],
+      "internalOccurrences": [
+        "demo:alt-client-unit"
+      ],
+      "internalConnections": [],
+      "notes": "Illustrative structure; interface, version, native composition, and internal configuration unspecified."
+    },
+    {
+      "id": "internal-definition:alt-server-internal",
+      "composition": "comp:alternative",
+      "parentOccurrence": "occ:alt-server",
+      "rootNode": "demo:alt-server-internal",
+      "authority": "atlas-example-local",
+      "source": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified",
+      "revision": null,
+      "configurationSelection": null,
+      "interfaces": [
+        "demo:alt-server-interface"
+      ],
+      "internalOccurrences": [
+        "demo:alt-server-unit"
+      ],
+      "internalConnections": [],
+      "notes": "Illustrative structure; interface, version, native composition, and internal configuration unspecified."
+    },
+    {
+      "id": "internal-definition:alt-workflow-internal",
+      "composition": "comp:alternative",
+      "parentOccurrence": "occ:alt-workflow",
+      "rootNode": "demo:alt-workflow-internal",
+      "authority": "atlas-example-local",
+      "source": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified",
+      "revision": null,
+      "configurationSelection": null,
+      "interfaces": [
+        "demo:alt-workflow-interface"
+      ],
+      "internalOccurrences": [
+        "demo:alt-workflow-unit"
+      ],
+      "internalConnections": [],
+      "notes": "Illustrative structure; interface, version, native composition, and internal configuration unspecified."
+    }
+  ]
+}

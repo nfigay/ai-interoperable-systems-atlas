@@ -1,0 +1,107 @@
+.atlas-worker-lab{border:1px solid #b6c2d0;border-radius:10px;padding:1rem;margin:1.5rem 0}
+.atlas-worker-lab button{cursor:pointer}
+.atlas-worker-lab button:disabled{cursor:not-allowed;opacity:.5}
+.atlas-worker-buttons{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}
+.atlas-worker-lab pre{white-space:pre-wrap;overflow-wrap:anywhere;background:rgba(127,127,127,.1);padding:.75rem;border-radius:6px}
+.atlas-e44-boundary{border:1px dashed #8a93a2;padding:1rem;border-radius:10px}
+.atlas-e44-topology{display:grid;gap:.5rem;max-width:780px;margin:auto}
+.atlas-e44-component{color:inherit;text-align:center;background:rgba(80,120,160,.08);border:1px solid #8e9bad;border-radius:8px;padding:.65rem;display:flex;flex-direction:column;gap:.2rem;align-items:center}
+.atlas-e44-component small,.atlas-e44-phases small{display:block;opacity:.85;font-size:.85em}
+.atlas-e44-component span{font-size:.8em;font-weight:600}
+.atlas-e44-workers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.atlas-e44-down{text-align:center;font-size:.86em;opacity:.75}
+.atlas-e44-transport{border-style:dashed}
+.atlas-e44-echo{margin-left:52%;background:rgba(80,150,100,.08)}
+.atlas-e44-component[aria-pressed=true],.atlas-e44-highlight{outline:2px solid #4284b4;outline-offset:2px}
+.atlas-e44-hint{font-size:.9em;opacity:.8}
+.atlas-e44-detail{padding:.75rem;border:1px solid #b6c2d0;border-radius:6px;margin:.8rem 0}
+.atlas-e44-detail dl{display:grid;grid-template-columns:minmax(85px,auto) 1fr;gap:.5rem}
+.atlas-e44-detail dt{font-weight:650}
+.atlas-e44-phases{padding-left:1.4rem}
+.atlas-e44-phases li{margin-bottom:.5rem}
+.atlas-e44-traces{max-height:360px;overflow:auto;padding-left:1.6rem}
+.atlas-e44-traces li{margin:.3rem 0}
+.atlas-e44-traces button{text-align:left;width:100%;white-space:normal;overflow-wrap:anywhere}
+@media(max-width:520px){.atlas-e44-workers{gap:.35rem}.atlas-e44-boundary{padding:.4rem}.atlas-e44-echo{margin-left:30%}}
+
+/* E4.5 architecture-linked sequence */
+.atlas-e45-flow{border:1px solid #92a6b6;border-radius:8px;padding:.65rem;background:rgba(90,130,170,.05)}
+.atlas-e45-flow-head{display:flex;justify-content:space-between;gap:.75rem;flex-wrap:wrap;font-size:.92rem}
+.atlas-e45-flow svg{width:100%;max-height:150px;display:block}
+.atlas-e45-flow [hidden]{display:none}
+.atlas-e45-flow p{font-size:.84rem;margin:.3rem 0}
+.atlas-e44-traces button[aria-current=true]{outline:2px solid #4284b4;outline-offset:2px;font-weight:650}
+
+/* E4.6: flow is located IN the architectural link, not in a separate trace illustration. */
+.atlas-e46-architecture{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,1.3fr) minmax(0,1fr);align-items:stretch;gap:.6rem;padding:.6rem;background:rgba(40,110,160,.045);border:2px solid #7399b6;border-radius:10px}
+.atlas-e46-link{display:flex;flex-direction:column;justify-content:center;align-items:stretch;text-align:center;gap:.35rem;border-radius:8px;background:rgba(40,110,160,.11);padding:.5rem;border:2px dashed #417ea8}
+.atlas-e46-link svg{width:100%;height:112px;overflow:visible}
+.atlas-e46-link>strong{font-size:.95rem}
+.atlas-e46-link>small{font-size:.83rem;min-height:2.6em}
+.atlas-e46-transport{padding:.35rem}
+.atlas-e46-architecture[data-flow=wire] .atlas-e46-link{border-style:solid;border-color:#0072c6;background:rgba(0,114,198,.14)}
+.atlas-e46-architecture[data-flow=local] .atlas-e46-server{outline:3px solid #18804b}
+.atlas-e46-architecture[data-flow=local] .atlas-e46-link{border-color:#18804b}
+@media(max-width:650px){.atlas-e46-architecture{grid-template-columns:minmax(0,1fr) minmax(145px,1.3fr) minmax(0,1fr);gap:.2rem;padding:.25rem}.atlas-e46-link{padding:.2rem}.atlas-e46-link svg{height:90px}.atlas-e46-architecture .atlas-e44-component{padding:.35rem;overflow-wrap:anywhere}}
+
+/* E4.7: compact desktop workspace, responsive narrow-screen stack. */
+.atlas-e47-workspace{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:1rem;align-items:start}
+.atlas-e47-left,.atlas-e47-right{min-width:0}
+.atlas-e47-left{position:sticky;top:.6rem;max-height:calc(100vh - 1.2rem);overflow:auto}
+.atlas-e47-workspace h4{margin:.4rem 0 .65rem}
+.atlas-e47-right .atlas-worker-buttons{margin:.5rem 0}
+.atlas-e47-right .atlas-worker-buttons button{font-size:.86rem;padding:.4rem .55rem}
+.atlas-e47-right .atlas-e44-traces{max-height:215px;overflow:auto;border:1px solid #b6c2d0;border-radius:6px;padding:.4rem .4rem .4rem 1.6rem;margin:.4rem 0}
+.atlas-e47-right .atlas-e44-traces li{margin:.12rem 0}
+.atlas-e47-right .atlas-e44-traces button{font-size:.82rem;padding:.25rem}
+.atlas-e47-right .atlas-e44-detail{max-height:230px;overflow:auto;margin:.4rem 0}
+.atlas-e47-right .atlas-e44-detail pre{font-size:.77rem}
+.atlas-e47-component-inspector,.atlas-e47-event-inspector,.atlas-e47-phases{margin:.4rem 0}
+.atlas-e47-workspace summary{cursor:pointer;font-weight:600;font-size:.9rem}
+.atlas-e47-compact-note,.atlas-e47-footnote{font-size:.82rem;opacity:.85}
+.atlas-e47-right h4 small{font-weight:400;opacity:.7}
+.atlas-e47-left .atlas-e46-architecture{grid-template-columns:minmax(0,1fr) minmax(120px,1.1fr) minmax(0,1fr);gap:.2rem;padding:.25rem}
+.atlas-e47-left .atlas-e46-link svg{height:85px}
+.atlas-e47-left .atlas-e44-component{font-size:.84rem;padding:.35rem;overflow-wrap:anywhere}
+.atlas-e47-left .atlas-e46-transport{font-size:.76rem}
+.atlas-e47-left .atlas-e44-echo{margin-left:50%}
+[data-flow-arrow]{stroke-dasharray:13 9;animation:atlas-e47-stream 1.2s linear infinite}
+@keyframes atlas-e47-stream{to{stroke-dashoffset:-44}}
+@media(prefers-reduced-motion:reduce){[data-flow-arrow]{animation:none}[data-flow-packet]{display:none!important}}
+@media(max-width:1000px){.atlas-e47-workspace{grid-template-columns:1fr}.atlas-e47-left{position:static;max-height:none;overflow:visible}.atlas-e47-right .atlas-e44-traces{max-height:250px}}
+
+/* E4.8 runtime states synchronized with the selected trace entry. */
+.atlas-e48-runtime{border:1px solid #9aadc0;border-radius:8px;padding:.6rem;margin:.6rem 0}
+.atlas-e48-runtime h4{display:flex;flex-wrap:wrap;gap:.5rem;align-items:baseline}
+.atlas-e48-runtime h4 small,.atlas-e48-note{font-size:.76rem;opacity:.8;font-weight:400}
+.atlas-e48-note{margin:.3rem 0 .5rem}
+.atlas-e48-states{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.45rem}
+.atlas-e48-state{border:1px solid #92a3b6;border-radius:6px;background:rgba(75,130,175,.06);padding:.5rem;min-width:0}
+.atlas-e48-state h5{font-size:.9rem;margin:.1rem 0 .4rem}
+.atlas-e48-state dl{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:.22rem;font-size:.76rem;margin:.3rem 0}
+.atlas-e48-state dt{font-weight:600;overflow-wrap:anywhere}
+.atlas-e48-state dd{margin:0;overflow-wrap:anywhere}
+.atlas-e48-state small{font-size:.7rem;opacity:.7}
+.atlas-e48-observation{font-weight:600;font-size:.82rem;margin:.25rem 0}
+@media(max-width:550px){.atlas-e48-states{grid-template-columns:1fr}}
+/* E4.9: guided phases and separate evidence tools */
+.atlas-e49-evidence{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;margin:.65rem 0;padding:.6rem;border:1px solid var(--border,#c9d2dc);border-radius:.45rem}
+.atlas-e49-evidence small{flex-basis:100%;opacity:.75}
+.atlas-e49-phase-groups{max-height:23rem;overflow:auto;display:grid;align-content:start;gap:.35rem}
+.atlas-e49-phase{border:1px solid var(--border,#c9d2dc);border-radius:.45rem;padding:.35rem .5rem}
+.atlas-e49-phase summary{cursor:pointer;font-weight:650;display:list-item}
+.atlas-e49-count{font-weight:400;font-size:.82em;opacity:.75;margin-left:.8rem}
+.atlas-e49-phase .atlas-e44-traces{max-height:17rem;overflow:auto;margin:.35rem 0;padding-left:2rem}
+.atlas-e49-trace-guide{font-size:.9rem;opacity:.8}
+
+/* E4.10 — show runtime snapshots inside the owning architectural components. */
+.atlas-e410-compact{display:block;width:100%;margin-top:.45rem;padding:.35rem .3rem;border-top:1px solid #9cacc0;text-align:left;font-size:.78rem;font-weight:400;line-height:1.4;overflow-wrap:anywhere}
+.atlas-e410-state-title{display:block;font-weight:700;margin-bottom:.3rem}
+.atlas-e410-fields{display:grid;gap:.2rem}
+.atlas-e410-field{display:block;line-height:1.25}
+.atlas-e410-field b{font-weight:600}
+.atlas-e410-caption{font-size:.79rem;opacity:.8;margin:.3rem 0 .65rem}
+.atlas-e46-client,.atlas-e46-server{justify-content:flex-start;align-items:stretch}
+@media(max-width:650px){.atlas-e410-compact{font-size:.68rem;padding:.2rem 0}.atlas-e410-caption{font-size:.75rem}}
+.atlas-e44-component .atlas-e410-compact{font-size:.76rem;font-weight:400}
+.atlas-e44-component .atlas-e410-state-title{font-size:.78rem;font-weight:700}

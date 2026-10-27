@@ -1,0 +1,11 @@
+.atlas-source-inspector {margin-top:.75rem;border:1px solid #aebed0;border-radius:.4rem;padding:.55rem;min-width:0}
+.atlas-source-inspector summary {cursor:pointer;font-weight:600;overflow-wrap:anywhere}
+.atlas-source-inspector p {font-size:.82rem;max-width:60ch}
+.atlas-source-inspector label {display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;font-size:.8rem;margin:.4rem 0}
+.atlas-source-inspector input {max-width:17rem;min-width:7rem;width:100%}
+.atlas-source-scroll {max-height:310px;overflow:auto;border:1px solid #b7c5d3;border-radius:4px;background:#f5f7fa;color:#1d2836;tab-size:2}
+.atlas-source-lines {display:block;width:max-content;min-width:100%;font:12px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre}
+.atlas-source-line {display:flex;min-height:1.55em;padding-right:.8rem}
+.atlas-source-number {position:sticky;left:0;display:inline-block;flex:0 0 3.5rem;padding-right:.8rem;text-align:right;background:#edf1f5;border-right:1px solid #cbd5e1;margin-right:1rem;color:#53667a;user-select:none}
+.atlas-source-match {background:#ffecaa}
+.atlas-source-hint {font-size:.75rem;font-weight:400}

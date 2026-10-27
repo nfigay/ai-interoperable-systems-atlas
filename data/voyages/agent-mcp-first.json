@@ -1,0 +1,15 @@
+{
+  "id": "voyage:agent-mcp-first",
+  "title": "From an agent to an interoperable MCP architecture",
+  "status": "guided-demonstration-not-conformance",
+  "composition": "comp:reference",
+  "baseline": "baseline:reference",
+  "steps": [
+    {"id":"concepts","title":"1 · Identify responsibilities","question":"What are an agent, an MCP client, a server, and a workflow?","method":"Explore the four occurrences and their definitions; distinguish roles from implementations.","targets":["occ:ref-agent","occ:ref-client","occ:ref-server","occ:ref-workflow"],"view":"graph","expected":"Four roles identified, without claiming MCP conformance.","evidence":"data/e3/federated-compositions.json"},
+    {"id":"interactions","title":"2 · Understand interactions","question":"Which interactions connect the architectural components?","method":"Examine uses, protocol-connection, and invokes in the direct composition.","targets":["conn:ref-ac","conn:ref-cs","conn:ref-sw"],"view":"graph","expected":"Three illustrative connections identified and distinguished from parts.","evidence":"data/e3/federated-compositions.json"},
+    {"id":"assembly","title":"3 · Explore assembly without transitivity","question":"Which parts are defined directly by each assembly?","method":"Open the illustrative assembly and inspect PartDefinition and PartUsage.","targets":["occ:ref-client","occ:ref-server"],"view":"hierarchy","hierarchy":"decomposition","expected":"Direct usages are distinguished from recursive navigation paths.","evidence":"data/e3/reified-parts.json"},
+    {"id":"configuration","title":"4 · Examine a baseline","question":"Which realizations are declared, and what evidence is missing?","method":"Choose baseline:reference; inspect occ:ref-client and compare it with occ:ref-server.","targets":["occ:ref-client","occ:ref-server"],"view":"graph","expected":"An illustrative selection for the client; no implicit internal selection for the server.","evidence":"data/e3/configuration-items.json"},
+    {"id":"prototype","title":"5 · Run a local experiment","question":"What does an observed client/server message sequence demonstrate?","method":"Run node scripts/voyage-mcp-fixture.mjs; observe the messages and their result.","targets":["occ:ref-client","occ:ref-server"],"view":"graph","expected":"A deterministic JSON trace; this simulator is neither an MCP SDK nor a conformance test.","evidence":"scripts/voyage-mcp-fixture.mjs"},
+    {"id":"reflect","title":"6 · Consolidate observations","question":"What have we demonstrated, and what remains to be tested?","method":"Compare hypotheses, the local trace, and references; distinguish declarations, observations, and conformance.","targets":["occ:ref-client","occ:ref-server"],"view":"graph","expected":"Knowledge status: declared roles, observed scenario, actual compatibility not established.","evidence":"data/voyages/agent-mcp-first.json"}
+  ]
+}

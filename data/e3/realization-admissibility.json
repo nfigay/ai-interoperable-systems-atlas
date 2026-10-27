@@ -1,0 +1,12 @@
+{
+  "schemaVersion":"atlas-realization-admissibility/0.1",
+  "status":"illustrative-unverified",
+  "note":"Illustrative local assertions only; not a STEP EXPRESS implementation or proof of MCP compatibility.",
+  "candidates":[
+    {"id":"candidate:reference-client-selected","configurationItem":"configuration-item:reference-client-internal","realizationDefinition":"realization-definition:reference-client-internal","applicableBaselines":["baseline:reference"],"constraints":[{"kind":"baseline-allowlist","baselines":["baseline:reference"]}],"evidence":"data/e3/configuration-items.json","authority":"atlas-example-local","verification":"illustrative-unverified"},
+    {"id":"candidate:reference-client-alternative","configurationItem":"configuration-item:reference-client-internal","realizationDefinition":"realization-definition:reference-client-alternative","applicableBaselines":["baseline:reference"],"constraints":[{"kind":"baseline-allowlist","baselines":["baseline:reference"]},{"kind":"revision-known"}],"evidence":"data/e3/realization-admissibility.json","authority":"atlas-example-local","verification":"illustrative-unverified"}
+  ],
+  "additionalRealizations":[
+    {"id":"realization-definition:reference-client-alternative","configurationItem":"configuration-item:reference-client-internal","internalDefinition":"internal-definition:ref-client-internal","assemblyDefinition":"assembly-definition:ref-client-internal","revision":null,"authority":"atlas-example-local","evidence":"data/e3/realization-admissibility.json","verification":"illustrative-unverified"}
+  ]
+}

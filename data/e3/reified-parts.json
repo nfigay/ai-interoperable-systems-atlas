@@ -1,0 +1,420 @@
+{
+  "schemaVersion": "atlas-reified-parts/0.1",
+  "status": "illustrative-unverified",
+  "note": "Atlas conceptual pattern informed by STEP, not an EXPRESS conformance model. No configuration_item is inferred from graphical nodes.",
+  "assemblyDefinitions": [
+    {
+      "id": "assembly-definition:ref-agent-internal",
+      "node": "demo:ref-agent-internal",
+      "definition": "internal-definition:ref-agent-internal",
+      "ownerOccurrence": "occ:ref-agent",
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    },
+    {
+      "id": "assembly-definition:ref-client-internal",
+      "node": "demo:ref-client-internal",
+      "definition": "internal-definition:ref-client-internal",
+      "ownerOccurrence": "occ:ref-client",
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    },
+    {
+      "id": "assembly-definition:ref-server-internal",
+      "node": "demo:ref-server-internal",
+      "definition": "internal-definition:ref-server-internal",
+      "ownerOccurrence": "occ:ref-server",
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    },
+    {
+      "id": "assembly-definition:ref-workflow-internal",
+      "node": "demo:ref-workflow-internal",
+      "definition": "internal-definition:ref-workflow-internal",
+      "ownerOccurrence": "occ:ref-workflow",
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    },
+    {
+      "id": "assembly-definition:alt-agent-internal",
+      "node": "demo:alt-agent-internal",
+      "definition": "internal-definition:alt-agent-internal",
+      "ownerOccurrence": "occ:alt-agent",
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    },
+    {
+      "id": "assembly-definition:alt-client-internal",
+      "node": "demo:alt-client-internal",
+      "definition": "internal-definition:alt-client-internal",
+      "ownerOccurrence": "occ:alt-client",
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    },
+    {
+      "id": "assembly-definition:alt-server-internal",
+      "node": "demo:alt-server-internal",
+      "definition": "internal-definition:alt-server-internal",
+      "ownerOccurrence": "occ:alt-server",
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    },
+    {
+      "id": "assembly-definition:alt-workflow-internal",
+      "node": "demo:alt-workflow-internal",
+      "definition": "internal-definition:alt-workflow-internal",
+      "ownerOccurrence": "occ:alt-workflow",
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    }
+  ],
+  "partDefinitions": [
+    {
+      "id": "part-definition:ref-agent-interface",
+      "assemblyDefinition": "assembly-definition:ref-agent-internal",
+      "role": "interface-role",
+      "label": "Agent interface (to be specified)",
+      "configurationItem": null,
+      "candidateItemDefinition": null,
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    },
+    {
+      "id": "part-definition:ref-agent-unit",
+      "assemblyDefinition": "assembly-definition:ref-agent-internal",
+      "role": "component-role",
+      "label": "Agent internal unit (to be specified)",
+      "configurationItem": null,
+      "candidateItemDefinition": null,
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    },
+    {
+      "id": "part-definition:ref-client-interface",
+      "assemblyDefinition": "assembly-definition:ref-client-internal",
+      "role": "interface-role",
+      "label": "Client interface (to be specified)",
+      "configurationItem": null,
+      "candidateItemDefinition": null,
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    },
+    {
+      "id": "part-definition:ref-client-unit",
+      "assemblyDefinition": "assembly-definition:ref-client-internal",
+      "role": "component-role",
+      "label": "Client internal unit (to be specified)",
+      "configurationItem": null,
+      "candidateItemDefinition": null,
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    },
+    {
+      "id": "part-definition:ref-server-interface",
+      "assemblyDefinition": "assembly-definition:ref-server-internal",
+      "role": "interface-role",
+      "label": "Server interface (to be specified)",
+      "configurationItem": null,
+      "candidateItemDefinition": null,
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    },
+    {
+      "id": "part-definition:ref-server-unit",
+      "assemblyDefinition": "assembly-definition:ref-server-internal",
+      "role": "component-role",
+      "label": "Server internal unit (to be specified)",
+      "configurationItem": null,
+      "candidateItemDefinition": null,
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    },
+    {
+      "id": "part-definition:ref-workflow-interface",
+      "assemblyDefinition": "assembly-definition:ref-workflow-internal",
+      "role": "interface-role",
+      "label": "Workflow interface (to be specified)",
+      "configurationItem": null,
+      "candidateItemDefinition": null,
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    },
+    {
+      "id": "part-definition:ref-workflow-unit",
+      "assemblyDefinition": "assembly-definition:ref-workflow-internal",
+      "role": "component-role",
+      "label": "Workflow internal unit (to be specified)",
+      "configurationItem": null,
+      "candidateItemDefinition": null,
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    },
+    {
+      "id": "part-definition:alt-agent-interface",
+      "assemblyDefinition": "assembly-definition:alt-agent-internal",
+      "role": "interface-role",
+      "label": "Agent interface (to be specified)",
+      "configurationItem": null,
+      "candidateItemDefinition": null,
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    },
+    {
+      "id": "part-definition:alt-agent-unit",
+      "assemblyDefinition": "assembly-definition:alt-agent-internal",
+      "role": "component-role",
+      "label": "Agent internal unit (to be specified)",
+      "configurationItem": null,
+      "candidateItemDefinition": null,
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    },
+    {
+      "id": "part-definition:alt-client-interface",
+      "assemblyDefinition": "assembly-definition:alt-client-internal",
+      "role": "interface-role",
+      "label": "Client interface (to be specified)",
+      "configurationItem": null,
+      "candidateItemDefinition": null,
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    },
+    {
+      "id": "part-definition:alt-client-unit",
+      "assemblyDefinition": "assembly-definition:alt-client-internal",
+      "role": "component-role",
+      "label": "Client internal unit (to be specified)",
+      "configurationItem": null,
+      "candidateItemDefinition": null,
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    },
+    {
+      "id": "part-definition:alt-server-interface",
+      "assemblyDefinition": "assembly-definition:alt-server-internal",
+      "role": "interface-role",
+      "label": "Server interface (to be specified)",
+      "configurationItem": null,
+      "candidateItemDefinition": null,
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    },
+    {
+      "id": "part-definition:alt-server-unit",
+      "assemblyDefinition": "assembly-definition:alt-server-internal",
+      "role": "component-role",
+      "label": "Server internal unit (to be specified)",
+      "configurationItem": null,
+      "candidateItemDefinition": null,
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    },
+    {
+      "id": "part-definition:alt-workflow-interface",
+      "assemblyDefinition": "assembly-definition:alt-workflow-internal",
+      "role": "interface-role",
+      "label": "Workflow interface (to be specified)",
+      "configurationItem": null,
+      "candidateItemDefinition": null,
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    },
+    {
+      "id": "part-definition:alt-workflow-unit",
+      "assemblyDefinition": "assembly-definition:alt-workflow-internal",
+      "role": "component-role",
+      "label": "Workflow internal unit (to be specified)",
+      "configurationItem": null,
+      "candidateItemDefinition": null,
+      "authority": "atlas-example-local",
+      "evidence": "data/e3/illustrative-decomposition.json",
+      "verification": "illustrative-unverified"
+    }
+  ],
+  "partUsages": [
+    {
+      "id": "part-usage:ref-agent-interface",
+      "partDefinition": "part-definition:ref-agent-interface",
+      "assemblyDefinition": "assembly-definition:ref-agent-internal",
+      "graphNode": "demo:ref-agent-interface",
+      "parentGraphNode": "demo:ref-agent-internal",
+      "assertionSource": "demo:ref-agent-interface",
+      "relation": "direct-part-usage",
+      "evidence": "data/e3/illustrative-decomposition.json"
+    },
+    {
+      "id": "part-usage:ref-agent-unit",
+      "partDefinition": "part-definition:ref-agent-unit",
+      "assemblyDefinition": "assembly-definition:ref-agent-internal",
+      "graphNode": "demo:ref-agent-unit",
+      "parentGraphNode": "demo:ref-agent-internal",
+      "assertionSource": "demo:ref-agent-unit",
+      "relation": "direct-part-usage",
+      "evidence": "data/e3/illustrative-decomposition.json"
+    },
+    {
+      "id": "part-usage:ref-client-interface",
+      "partDefinition": "part-definition:ref-client-interface",
+      "assemblyDefinition": "assembly-definition:ref-client-internal",
+      "graphNode": "demo:ref-client-interface",
+      "parentGraphNode": "demo:ref-client-internal",
+      "assertionSource": "demo:ref-client-interface",
+      "relation": "direct-part-usage",
+      "evidence": "data/e3/illustrative-decomposition.json"
+    },
+    {
+      "id": "part-usage:ref-client-unit",
+      "partDefinition": "part-definition:ref-client-unit",
+      "assemblyDefinition": "assembly-definition:ref-client-internal",
+      "graphNode": "demo:ref-client-unit",
+      "parentGraphNode": "demo:ref-client-internal",
+      "assertionSource": "demo:ref-client-unit",
+      "relation": "direct-part-usage",
+      "evidence": "data/e3/illustrative-decomposition.json"
+    },
+    {
+      "id": "part-usage:ref-server-interface",
+      "partDefinition": "part-definition:ref-server-interface",
+      "assemblyDefinition": "assembly-definition:ref-server-internal",
+      "graphNode": "demo:ref-server-interface",
+      "parentGraphNode": "demo:ref-server-internal",
+      "assertionSource": "demo:ref-server-interface",
+      "relation": "direct-part-usage",
+      "evidence": "data/e3/illustrative-decomposition.json"
+    },
+    {
+      "id": "part-usage:ref-server-unit",
+      "partDefinition": "part-definition:ref-server-unit",
+      "assemblyDefinition": "assembly-definition:ref-server-internal",
+      "graphNode": "demo:ref-server-unit",
+      "parentGraphNode": "demo:ref-server-internal",
+      "assertionSource": "demo:ref-server-unit",
+      "relation": "direct-part-usage",
+      "evidence": "data/e3/illustrative-decomposition.json"
+    },
+    {
+      "id": "part-usage:ref-workflow-interface",
+      "partDefinition": "part-definition:ref-workflow-interface",
+      "assemblyDefinition": "assembly-definition:ref-workflow-internal",
+      "graphNode": "demo:ref-workflow-interface",
+      "parentGraphNode": "demo:ref-workflow-internal",
+      "assertionSource": "demo:ref-workflow-interface",
+      "relation": "direct-part-usage",
+      "evidence": "data/e3/illustrative-decomposition.json"
+    },
+    {
+      "id": "part-usage:ref-workflow-unit",
+      "partDefinition": "part-definition:ref-workflow-unit",
+      "assemblyDefinition": "assembly-definition:ref-workflow-internal",
+      "graphNode": "demo:ref-workflow-unit",
+      "parentGraphNode": "demo:ref-workflow-internal",
+      "assertionSource": "demo:ref-workflow-unit",
+      "relation": "direct-part-usage",
+      "evidence": "data/e3/illustrative-decomposition.json"
+    },
+    {
+      "id": "part-usage:alt-agent-interface",
+      "partDefinition": "part-definition:alt-agent-interface",
+      "assemblyDefinition": "assembly-definition:alt-agent-internal",
+      "graphNode": "demo:alt-agent-interface",
+      "parentGraphNode": "demo:alt-agent-internal",
+      "assertionSource": "demo:alt-agent-interface",
+      "relation": "direct-part-usage",
+      "evidence": "data/e3/illustrative-decomposition.json"
+    },
+    {
+      "id": "part-usage:alt-agent-unit",
+      "partDefinition": "part-definition:alt-agent-unit",
+      "assemblyDefinition": "assembly-definition:alt-agent-internal",
+      "graphNode": "demo:alt-agent-unit",
+      "parentGraphNode": "demo:alt-agent-internal",
+      "assertionSource": "demo:alt-agent-unit",
+      "relation": "direct-part-usage",
+      "evidence": "data/e3/illustrative-decomposition.json"
+    },
+    {
+      "id": "part-usage:alt-client-interface",
+      "partDefinition": "part-definition:alt-client-interface",
+      "assemblyDefinition": "assembly-definition:alt-client-internal",
+      "graphNode": "demo:alt-client-interface",
+      "parentGraphNode": "demo:alt-client-internal",
+      "assertionSource": "demo:alt-client-interface",
+      "relation": "direct-part-usage",
+      "evidence": "data/e3/illustrative-decomposition.json"
+    },
+    {
+      "id": "part-usage:alt-client-unit",
+      "partDefinition": "part-definition:alt-client-unit",
+      "assemblyDefinition": "assembly-definition:alt-client-internal",
+      "graphNode": "demo:alt-client-unit",
+      "parentGraphNode": "demo:alt-client-internal",
+      "assertionSource": "demo:alt-client-unit",
+      "relation": "direct-part-usage",
+      "evidence": "data/e3/illustrative-decomposition.json"
+    },
+    {
+      "id": "part-usage:alt-server-interface",
+      "partDefinition": "part-definition:alt-server-interface",
+      "assemblyDefinition": "assembly-definition:alt-server-internal",
+      "graphNode": "demo:alt-server-interface",
+      "parentGraphNode": "demo:alt-server-internal",
+      "assertionSource": "demo:alt-server-interface",
+      "relation": "direct-part-usage",
+      "evidence": "data/e3/illustrative-decomposition.json"
+    },
+    {
+      "id": "part-usage:alt-server-unit",
+      "partDefinition": "part-definition:alt-server-unit",
+      "assemblyDefinition": "assembly-definition:alt-server-internal",
+      "graphNode": "demo:alt-server-unit",
+      "parentGraphNode": "demo:alt-server-internal",
+      "assertionSource": "demo:alt-server-unit",
+      "relation": "direct-part-usage",
+      "evidence": "data/e3/illustrative-decomposition.json"
+    },
+    {
+      "id": "part-usage:alt-workflow-interface",
+      "partDefinition": "part-definition:alt-workflow-interface",
+      "assemblyDefinition": "assembly-definition:alt-workflow-internal",
+      "graphNode": "demo:alt-workflow-interface",
+      "parentGraphNode": "demo:alt-workflow-internal",
+      "assertionSource": "demo:alt-workflow-interface",
+      "relation": "direct-part-usage",
+      "evidence": "data/e3/illustrative-decomposition.json"
+    },
+    {
+      "id": "part-usage:alt-workflow-unit",
+      "partDefinition": "part-definition:alt-workflow-unit",
+      "assemblyDefinition": "assembly-definition:alt-workflow-internal",
+      "graphNode": "demo:alt-workflow-unit",
+      "parentGraphNode": "demo:alt-workflow-internal",
+      "assertionSource": "demo:alt-workflow-unit",
+      "relation": "direct-part-usage",
+      "evidence": "data/e3/illustrative-decomposition.json"
+    }
+  ],
+  "configurationItems": []
+}
