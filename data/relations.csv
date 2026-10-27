@@ -2,3 +2,20 @@ source_id,relation,target_id,status,notes
 AI-CON-002,may_use,AI-CON-001,P,An agent may use a model but need not
 AI-CON-004,is_distinct_from,AI-CON-003,P,MCP is an integration protocol not workflow enactment
 AI-CON-005,is_a_kind_of,AI-CON-001,P,Classification requires further typing
+AI-CON-005,specializes,AI-CON-001,P,Editorial conceptual link; scope and evidence require review
+AI-CON-007,requires_validation_beyond,AI-CON-006,P,Editorial conceptual link; scope and evidence require review
+AI-CON-011,augments_context_for,AI-CON-005,P,Editorial conceptual link; scope and evidence require review
+AI-CON-009,constrains_representation_of,AI-CON-010,P,Editorial conceptual link; scope and evidence require review
+AI-CON-008,cannot_be_inferred_from,AI-CON-010,P,Editorial conceptual link; scope and evidence require review
+AI-CON-012,requires_mediation_of,AI-CON-008,P,Editorial conceptual link; scope and evidence require review
+AI-CON-013,requires_evidence_from,AI-CON-015,P,Editorial conceptual link; scope and evidence require review
+AI-CON-014,requires_explicit_controls_from,AI-CON-016,P,Editorial conceptual link; scope and evidence require review
+AI-CON-016,may_use,AI-CON-005,P,Editorial conceptual link; scope and evidence require review
+AI-CON-016,may_use,AI-CON-019,P,Editorial conceptual link; scope and evidence require review
+AI-CON-018,manages,AI-CON-019,P,Editorial conceptual link; scope and evidence require review
+AI-CON-019,communicates_with,AI-CON-020,P,Editorial conceptual link; scope and evidence require review
+AI-CON-017,provides_inference_to,AI-CON-016,P,Editorial conceptual link; scope and evidence require review
+AI-CON-023,combines_approaches_to,AI-CON-007,P,Editorial conceptual link; scope and evidence require review
+AI-CON-021,constrains_interpretation_of,AI-CON-022,P,Editorial conceptual link; scope and evidence require review
+AI-CON-004,defines_protocol_for,AI-CON-019,P,Editorial conceptual link; scope and evidence require review
+AI-CON-004,defines_protocol_for,AI-CON-020,P,Editorial conceptual link; scope and evidence require review

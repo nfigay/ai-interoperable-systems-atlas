@@ -4,34 +4,201 @@
     "label": "AI model",
     "status": "E",
     "definition": "Computational mechanism or representation producing outputs from inputs",
-    "review": "draft"
+    "review": "draft",
+    "resource": "architecture/knowledge/llm-learning-inference-evaluation"
   },
   {
     "id": "AI-CON-002",
     "label": "Agent",
     "status": "S",
     "definition": "Entity or system perceiving or obtaining information about an environment and selecting or performing actions",
-    "review": "draft"
+    "review": "draft",
+    "resource": "architecture/knowledge/harness-agents-delegation"
   },
   {
     "id": "AI-CON-003",
     "label": "Workflow enactment",
     "status": "N (WfMC context)",
     "definition": "Runtime progression and management of workflow instances",
-    "review": "draft"
+    "review": "draft",
+    "resource": "architecture/mcp/agents-and-evidence"
   },
   {
     "id": "AI-CON-004",
     "label": "MCP",
     "status": "N",
     "definition": "Model Context Protocol for client/server capability interoperability",
-    "review": "draft"
+    "review": "draft",
+    "resource": "mcp-architecture"
   },
   {
     "id": "AI-CON-005",
     "label": "LLM",
     "status": "E",
     "definition": "Large trained language-centric generative model",
-    "review": "draft"
+    "review": "draft",
+    "resource": "architecture/knowledge/llm-learning-inference-evaluation"
+  },
+  {
+    "id": "AI-CON-006",
+    "label": "Inference",
+    "status": "P",
+    "definition": "Inference over learned or formal representations is not, by itself, empirical validation.",
+    "review": "editorial proposal — not a normative assertion",
+    "resource": "architecture/knowledge/llm-learning-inference-evaluation",
+    "viewGroup": "Models & inference"
+  },
+  {
+    "id": "AI-CON-007",
+    "label": "Reasoning",
+    "status": "P",
+    "definition": "Production or verification of conclusions under stated premises and validity conditions.",
+    "review": "editorial proposal — not a normative assertion",
+    "resource": "architecture/knowledge/reasoning-trust-fallacies",
+    "viewGroup": "Models & inference"
+  },
+  {
+    "id": "AI-CON-008",
+    "label": "Meaning and interpretation",
+    "status": "P",
+    "definition": "Situated interpretation and use of representations; not reducible to graph structure.",
+    "review": "editorial proposal — not a normative assertion",
+    "resource": "architecture/knowledge/models-worlds-meaning",
+    "viewGroup": "Knowledge & semantics"
+  },
+  {
+    "id": "AI-CON-009",
+    "label": "Ontology",
+    "status": "P",
+    "definition": "Explicit formalization of a situated conceptualization with ontological commitments.",
+    "review": "editorial proposal — not a normative assertion",
+    "resource": "architecture/knowledge/rag-ontologies-neurosymbolic",
+    "viewGroup": "Knowledge & semantics"
+  },
+  {
+    "id": "AI-CON-010",
+    "label": "Knowledge graph",
+    "status": "P",
+    "definition": "Structured assertions whose truth and applicability depend on provenance and context.",
+    "review": "editorial proposal — not a normative assertion",
+    "resource": "architecture/knowledge/rag-ontologies-neurosymbolic",
+    "viewGroup": "Knowledge & semantics"
+  },
+  {
+    "id": "AI-CON-011",
+    "label": "Retrieval augmented generation",
+    "status": "P",
+    "definition": "Retrieval of external material to inform generation, not a guarantee of correctness.",
+    "review": "editorial proposal — not a normative assertion",
+    "resource": "architecture/knowledge/rag-ontologies-neurosymbolic",
+    "viewGroup": "Knowledge & semantics"
+  },
+  {
+    "id": "AI-CON-012",
+    "label": "Semantic interoperability",
+    "status": "P",
+    "definition": "Contextual mediation of meaning across differing conceptualizations and systems.",
+    "review": "editorial proposal — not a normative assertion",
+    "resource": "architecture/knowledge/models-worlds-meaning",
+    "viewGroup": "Knowledge & semantics"
+  },
+  {
+    "id": "AI-CON-013",
+    "label": "Trust and justification",
+    "status": "P",
+    "definition": "Task-dependent confidence requiring evidence, independent checks and explicit limits.",
+    "review": "editorial proposal — not a normative assertion",
+    "resource": "architecture/knowledge/reasoning-trust-fallacies",
+    "viewGroup": "Governance & evidence"
+  },
+  {
+    "id": "AI-CON-014",
+    "label": "Accountability and delegation",
+    "status": "P",
+    "definition": "Assigned authority, responsibility, permitted actions and verification of outcomes.",
+    "review": "editorial proposal — not a normative assertion",
+    "resource": "architecture/knowledge/harness-agents-delegation",
+    "viewGroup": "Governance & evidence"
+  },
+  {
+    "id": "AI-CON-015",
+    "label": "Experimental evidence",
+    "status": "P",
+    "definition": "Reproducible observations and controls that support bounded claims about implementation.",
+    "review": "editorial proposal — not a normative assertion",
+    "resource": "architecture/knowledge/experiments-evidence",
+    "viewGroup": "Governance & evidence"
+  },
+  {
+    "id": "AI-CON-016",
+    "label": "Agent harness",
+    "status": "P",
+    "definition": "Orchestration environment for context, tools, execution loops and controls; distinct from the LLM.",
+    "review": "editorial proposal — not a normative assertion",
+    "resource": "architecture/knowledge/harness-agents-delegation",
+    "viewGroup": "Agents & orchestration"
+  },
+  {
+    "id": "AI-CON-017",
+    "label": "LLM inference API",
+    "status": "P",
+    "definition": "Provider interface for requesting model inference; distinct from MCP tool invocation.",
+    "review": "editorial proposal — not a normative assertion",
+    "resource": "architecture/mcp/llm-integration",
+    "viewGroup": "Protocols & distribution"
+  },
+  {
+    "id": "AI-CON-018",
+    "label": "MCP Host",
+    "status": "P",
+    "definition": "Application-level controller of MCP clients, policies and user consent; not synonymous with a UI.",
+    "review": "editorial proposal — not a normative assertion",
+    "resource": "architecture/mcp/roles-and-invocation",
+    "viewGroup": "Protocols & distribution"
+  },
+  {
+    "id": "AI-CON-019",
+    "label": "MCP Client",
+    "status": "P",
+    "definition": "Protocol endpoint maintained by a Host to communicate with an MCP server.",
+    "review": "editorial proposal — not a normative assertion",
+    "resource": "architecture/mcp/roles-and-invocation",
+    "viewGroup": "Protocols & distribution"
+  },
+  {
+    "id": "AI-CON-020",
+    "label": "MCP Server",
+    "status": "P",
+    "definition": "Protocol endpoint exposing capabilities through MCP; not necessarily a remote process.",
+    "review": "editorial proposal — not a normative assertion",
+    "resource": "architecture/mcp/roles-and-invocation",
+    "viewGroup": "Protocols & distribution"
+  },
+  {
+    "id": "AI-CON-021",
+    "label": "Configuration and baseline",
+    "status": "P",
+    "definition": "Explicit selection of admissible versions and realizations under a defined context.",
+    "review": "editorial proposal — not a normative assertion",
+    "resource": "architecture/mcp/atlas-demonstrator-position",
+    "viewGroup": "Engineering & configuration"
+  },
+  {
+    "id": "AI-CON-022",
+    "label": "Identity and occurrence",
+    "status": "P",
+    "definition": "Distinction between definitions, occurrences and identity across viewpoints or versions.",
+    "review": "editorial proposal — not a normative assertion",
+    "resource": "architecture/knowledge/crosswalk",
+    "viewGroup": "Engineering & configuration"
+  },
+  {
+    "id": "AI-CON-023",
+    "label": "Neuro-symbolic integration",
+    "status": "P",
+    "definition": "Hybrid composition of learned models with explicit symbolic operations or constraints.",
+    "review": "editorial proposal — not a normative assertion",
+    "resource": "architecture/knowledge/rag-ontologies-neurosymbolic",
+    "viewGroup": "Models & inference"
   }
 ]

@@ -160,6 +160,15 @@ export function mountConceptMap(host) {
       details.append(makeText('p', 'Use Expand groups to explore its contained concepts.'));
     } else {
       details.append(makeText('p', data.definition || 'Definition pending review'));
+      // Concept-to-reading link is an editorial pointer, not evidence of equivalence.
+      const resource = conceptById.get(data.id)?.resource;
+      if (resource && /^[a-z0-9/_-]+$/i.test(resource)) {
+        const link = makeText('a', 'Read the associated Atlas resource');
+        link.href = `#${resource}`;
+        details.append(link);
+      }
+
+
       const examples=conceptExamples[data.id] || [];
       if(examples.length){
         details.append(makeText('h3','Illustrative composite-model occurrences'));
